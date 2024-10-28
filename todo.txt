@@ -1,0 +1,31 @@
+general
+  1 roofline
+    rookfile-kit
+  2 rend teorico
+  IA=2*N^2/4(n^2+2*n)=1/2(aprox)
+  IA2=1/4
+  3 rendimiento cod original
+  4 TMA
+    perf stat tm1 aprox
+optimizacion
+
+polybench papi 
+  include polybench.c and .h from repo hardcoding it
+
+numactl and perf
+   
+
+hadd
+  1
+    none=> a[] b[] c[] d[]
+    hadd =>
+    2hadd =>  a03 b03 c03 d03 a47 b47 c47 d47 
+    shift =>  a03 b03 c03 d03
+              a47 b47 c47 d47
+    add => a b c d
+  2
+    or1=hadd1 a b
+    temp=hadd2 c d
+    permute2f128 temp temp 1
+    hadd3 or1 temp
+

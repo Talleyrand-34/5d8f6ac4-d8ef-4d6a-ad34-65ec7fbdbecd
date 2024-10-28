@@ -1,0 +1,26 @@
+Optimizacion de la multiplicacion matriz-vector
+Durante el desarrollo de la asignatura hemos estudiado dos modelos de rendimiento orientados
+al analisis del funcionamiento de c´odigos de altas prestaciones en procesadores modernos: el modelo
+Roofline, empleado para determinar si el rendimiento obtenido por un codigo se ajusta al esperado; y
+el modelo TMA, desarrollado por Intel para explicar las causas del rendimiento de una aplicacion1
+.
+La practica consistir´a en la aplicaci´on de estos dos modelos en el proceso de optimizaci´on de una
+multiplicacion matriz-vector (MV):
+```
+for ( i = 0; i < N ; ++ i )
+for ( j =0; j < N ; ++ j )
+y [ i ] += A [ i * N + j ] * x [ j ];
+```
+Figura 1: Producto matriz-vector.
+Usando como punto de partida el codigo disponible en el Campus Virtual, el alumno deber´a
+desarrollar y entregar los siguientes productos entregables:
+1. Una memoria, en formato PDF, describiendo los pasos seguidos durante el proceso de optimizacion del c´odigo, incluyendo
+La construccion del modelo Roofline para la maquina empleada en las pruebas.
+La determinacion del rendimiento pico te´orico del c´odigo MV en dicha m´aquina.
+El rendimiento del codigo original (compilando sin vectorizaci´on activada, p. ej., gcc -O2
+-fno-tree-vectorize).
+Los resultados de la aplicacion del modelo TMA, optimizaciones llevadas a cabo en virtud de
+los mismos y nuevo rendimiento observado (p. ej., vectorizacion autom´atica del compilador,
+vectorizacion manual, etc.).
+2. El codigo final obtenido tras las diferentes iteraciones del proceso de optimizaci´on.
+usa ensamblador de intel https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html
